@@ -1,0 +1,525 @@
+/* ============================================================
+   JOBSEEKER — CUSTOM STYLESHEET
+   Pangalan ng Student: ______________________________
+   Theme Name:          ______________________________
+   ============================================================ */
+
+/* --- Google Fonts Import (optional) ---
+   Pumunta sa https://fonts.google.com, pumili ng font,
+   i-copy ang @import link, i-paste dito.
+
+   Halimbawa:
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+*/
+
+
+
+
+/* ----------------------------------------------------------------
+   SECTION 1: MGA KULAY (Colors)
+   ----------------------------------------------------------------
+   Palitan ang bawat hex code ng kulay na gusto mo.
+   Tip: https://coolors.co — para pumili ng color palette
+        https://htmlcolorcodes.com — para makita ang hex codes
+   ---------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-header:       #0B1F3A;   /* deep navy header */
+  --color-accent:       #3B82F6;   /* electric blue primary */
+  --color-cta:          #7C3AED;   /* violet accent for CTA and hover */
+  --color-page-bg:      #F8FAFC;   /* light gray page background */
+  --color-card-bg:      #ffffff;   /* white card background */
+  --color-heading:      #0F172A;   /* rich dark heading color */
+  --color-body-text:    #475569;   /* soft slate body text */
+  --color-link:         var(--color-accent); /* links use primary accent */
+  --color-tag-bg:       #EEF2FF;   /* subtle tag background */
+  --color-tag-text:     #1D4ED8;   /* bold electric tag text */
+  --color-footer:       #061426;   /* darker navy footer */
+  --showcase-overlay:   rgba(11, 31, 58, 0.35); /* hero banner overlay */
+}
+
+
+/* ----------------------------------------------------------------
+   SECTION 2: MGA FONT (Typography)
+   ----------------------------------------------------------------
+   Palitan ng font name na gusto mo.
+   Kung gagamit ng Google Font, i-import muna sa taas ng file.
+
+   Halimbawa ng built-in fonts (hindi na kailangan ng import):
+     'Georgia', serif
+     'Arial', sans-serif
+     'Verdana', sans-serif
+     'Times New Roman', serif
+     'Courier New', monospace
+   ---------------------------------------------------------------- */
+
+:root {
+  --font-heading: 'Poppins', 'Inter', 'Helvetica Neue', Arial, sans-serif; /* headings */
+  --font-body:    'Inter', 'system-ui', Arial, sans-serif;               /* body text */
+}
+
+
+/* ----------------------------------------------------------------
+   SECTION 3: HUGIS AT ESTILO (Shape & Style)
+   ----------------------------------------------------------------
+   --border-radius:
+     0px      = matuwid / sharp corners
+     4px      = konting rounding
+     8px      = medyo rounded
+     16px     = malakas na rounding
+     9999px   = pill shape / fully round
+
+   --card-shadow:
+     none                           = walang shadow
+     0 2px 8px rgba(0,0,0,0.08)    = mahinang shadow
+     0 4px 16px rgba(0,0,0,0.20)   = malakas na shadow
+   ---------------------------------------------------------------- */
+
+:root {
+  --border-radius: 6px;
+  --card-shadow:   0 8px 22px rgba(2, 6, 23, 0.06);
+}
+
+/* Make small secondary gray text more readable */
+.text-gray-600 { color: #64748b !important; }
+
+
+
+
+/* ================================================================
+   === HUWAG I-EDIT ANG SECTION NA ITO (unless gusto mong advanced!) ===
+   === Ito ang code na gumagamit ng iyong mga variables sa itaas.  ===
+   ================================================================ */
+
+body {
+  font-family: var(--font-body) !important;
+  background-color: var(--color-page-bg) !important;
+  color: var(--color-body-text) !important;
+  min-height: 100vh;
+}
+
+.showcase {
+  position: relative;
+  overflow: hidden;
+  background-image: url('../images/showcase.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.showcase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 31, 58, 0.85), rgba(59, 130, 246, 0.25) 50%, rgba(124, 58, 237, 0.35));
+  pointer-events: none;
+}
+
+.showcase .overlay {
+  background-color: transparent !important;
+}
+
+.showcase .container {
+  position: relative;
+}
+
+.showcase form {
+  background: transparent !important;
+  border-radius: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  box-shadow: none !important;
+  justify-content: center;
+  max-width: 760px;
+}
+
+.showcase form input {
+  min-width: 220px;
+  flex: 1 1 220px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.showcase form input:focus {
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16);
+}
+
+.showcase form button {
+  border-radius: 9999px;
+  background: var(--color-accent) !important;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 18px 40px rgba(59, 130, 246, 0.18);
+}
+
+.showcase form button:hover {
+  background: var(--color-cta) !important;
+  transform: translateY(-1px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading) !important;
+  color: var(--color-heading) !important;
+}
+
+a {
+  color: var(--color-link) !important;
+}
+
+header {
+  background-color: var(--color-header) !important;
+}
+
+.alt-heading { color: var(--color-link) !important; }
+
+.bg-blue-900,
+.bg-blue-800 {
+  background-color: var(--color-header) !important;
+}
+
+.bg-yellow-500,
+.bg-blue-500,
+.bg-red-500,
+.bg-red-600 {
+  color: #ffffff !important;
+}
+
+/* Stronger selectors for anchor elements with colored backgrounds */
+a.bg-red-500,
+a.bg-red-600,
+.bg-red-500.text-white,
+.bg-red-600.text-white,
+.bg-red-500 > a,
+.bg-red-600 > a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Ensure hover retains white text */
+a.bg-red-500:hover,
+a.bg-red-600:hover,
+.bg-red-500:hover,
+.bg-red-600:hover {
+  color: #ffffff !important;
+}
+
+
+/* Ensure CTA buttons using accent have readable white text */
+.bg-yellow-500,
+.bg-blue-500 {
+  color: #ffffff !important;
+}
+
+/* Subtle link hover for professionalism */
+a:hover {
+  text-decoration: underline;
+  opacity: 0.95;
+}
+
+.hover\:bg-yellow-600:hover {
+  background-color: var(--color-cta) !important;
+}
+
+.bg-blue-500,
+.bg-yellow-500 {
+  background-color: var(--color-accent) !important;
+}
+
+.bg-blue-600:hover,
+.hover\:bg-yellow-600:hover,
+.bg-yellow-600:hover {
+  background-color: var(--color-cta) !important;
+}
+
+.bg-white {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 28px 60px rgba(11, 31, 58, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.64) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+section .bg-white {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 28px 60px rgba(11, 31, 58, 0.12) !important;
+}
+
+input,
+textarea {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: inset 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(59, 130, 246, 0.65) !important;
+  box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.16) !important;
+  outline: none !important;
+  transform: translateY(-1px);
+}
+
+button,
+.bg-green-500,
+.bg-red-500,
+.bg-blue-500 {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.bg-green-500 {
+  background: linear-gradient(135deg, #3B82F6, #7C3AED) !important;
+  box-shadow: 0 18px 40px rgba(59, 130, 246, 0.22) !important;
+}
+
+.bg-green-500:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 46px rgba(59, 130, 246, 0.28) !important;
+  background: linear-gradient(135deg, #7C3AED, #3B82F6) !important;
+}
+
+.bg-red-500 {
+  background: #ef4444 !important;
+}
+
+.bg-red-500:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.95);
+}
+
+.shadow-md {
+  box-shadow: 0 18px 42px rgba(11, 31, 58, 0.08) !important;
+}
+
+.bg-indigo-100 {
+  background-color: #eef2ff !important;
+}
+
+.text-indigo-700,
+.text-indigo-800 {
+  color: #7C3AED !important;
+}
+
+.bg-indigo-100 {
+  background-color: var(--color-tag-bg) !important;
+}
+
+.text-indigo-700,
+.text-indigo-800 {
+  color: var(--color-tag-text) !important;
+}
+
+.text-blue-700,
+.text-blue-500,
+.text-blue-900 {
+  color: var(--color-link) !important;
+}
+
+button,
+.rounded,
+.rounded-lg {
+  border-radius: var(--border-radius) !important;
+}
+
+.overlay {
+  background-color: var(--showcase-overlay) !important;
+}
+
+footer,
+.bg-indigo-900 {
+  background-color: var(--color-footer) !important;
+}
+
+.bg-gray-100 {
+  background-color: var(--color-page-bg) !important;
+}
+
+.create-listing-card {
+  width: 100% !important;
+  max-width: 1120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.listing-form {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.form-intro {
+  max-width: 720px;
+  margin: 0 auto 2rem auto;
+}
+
+.form-intro p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.listing-form-grid {
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .listing-form-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.form-panel {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 24px 60px rgba(11, 31, 58, 0.08) !important;
+  padding: 28px !important;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.section-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-heading);
+}
+
+.section-header p {
+  margin: 4px 0 0;
+  color: var(--color-body-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.field-group {
+  margin-bottom: 18px;
+}
+
+.field-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: inset 0 2px 12px rgba(15, 23, 42, 0.06) !important;
+  font-size: 1rem;
+  color: #0f172a;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.form-input.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-input:focus {
+  outline: none !important;
+  border-color: rgba(59, 130, 246, 0.65) !important;
+  box-shadow: 0 0 0 0.35rem rgba(59, 130, 246, 0.14) !important;
+  transform: translateY(-1px);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn-save,
+.btn-cancel {
+  min-width: 150px;
+  padding: 14px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-save {
+  border: none;
+  background: linear-gradient(135deg, #3B82F6, #7C3AED) !important;
+  color: #ffffff !important;
+  box-shadow: 0 18px 40px rgba(59, 130, 246, 0.22) !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 50px rgba(59, 130, 246, 0.28) !important;
+}
+
+.btn-cancel {
+  background: rgba(239, 68, 68, 0.08) !important;
+  border: 1px solid rgba(239, 68, 68, 0.22) !important;
+  color: #dc2626 !important;
+  text-decoration: none;
+}
+
+.btn-cancel:hover {
+  transform: translateY(-1px);
+  background: rgba(239, 68, 68, 0.16) !important;
+}
+
+@media (max-width: 768px) {
+  .button-row {
+    justify-content: stretch;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    width: 100%;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+   ADVANCED ZONE — Para sa gustong mag-explore pa!
+   ----------------------------------------------------------------
+   Alisin ang at para i-activate ang isang rule.
+   ---------------------------------------------------------------- */
+
+/* Hover effect sa mga link */
+/* a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+} */
+
+/* Kulay ng input fields */
+/* input, select, textarea {
+  border-color: var(--color-link) !important;
+  border-radius: var(--border-radius) !important;
+} */
+
+/* Kulay ng success badge */
+/* .bg-green-100 { background-color: #d1fae5 !important; }
+   .text-green-800 { color: #065f46 !important; } */
