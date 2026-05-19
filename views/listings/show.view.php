@@ -1,6 +1,22 @@
 <?php loadPartial("head"); ?>
 <?php loadPartial("navbar"); ?>
 
+<?php
+// Ensure $listing is defined to avoid undefined variable errors in templates
+$listing = $listing ?? (object)[
+    'title' => '',
+    'company' => '',
+    'city' => '',
+    'state' => '',
+    'address' => '',
+    'salary' => 0,
+    'requirements' => '',
+    'benefits' => '',
+    'email' => '',
+    'phone' => '',
+];
+?>
+
 <section class="container mx-auto p-4 mt-6">
     <div class="bg-white rounded-lg shadow p-6">
         <h1 class="text-3xl font-bold mb-4"><?= htmlspecialchars($listing->title) ?></h1>
