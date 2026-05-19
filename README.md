@@ -84,4 +84,4 @@ If you don’t set environment variables, the default values from `config/db.php
 
 The `/ternary` page is intentionally left public so you can access the ternary demo without logging in.
 
-If you want to add a README for GitHub, this file is a good starting point and can be expanded with setup steps, deployment notes, and screenshots.
+
